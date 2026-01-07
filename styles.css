@@ -1,32 +1,45 @@
+/* =========================
+   FUENTES
+========================= */
 @font-face {
     font-family: 'Minimo';
     src: url('font/Minimo Medium.otf');
 }
 
-/* VARIABLES DE ALTURA REAL */
-:root {
-    --top-bar: 20px;
-    --header: 120px;
-    --footer: 120px; /* ajusta si tu imagen del footer es más alta */
+@font-face {
+    font-family: 'MinimoBold';
+    src: url('font/Minimo Bold.otf');
 }
 
+@font-face {
+    font-family: 'MinimoLight';
+    src: url('font/Minimo Light.otf');
+}
+
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Minimo', sans-serif;
     background: #fff;
-    overflow-x: hidden; /* solo el catálogo hace scroll */
+    color: #111;
 }
 
 /* =========================
    BARRA SUPERIOR
 ========================= */
 .top-bar {
-    height: var(--top-bar);
+    height: 20px;
     background: #fe6a00;
 }
 
@@ -34,212 +47,119 @@ body {
    HEADER
 ========================= */
 .header {
-    height: var(--header);
     text-align: center;
-    padding: 10px 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 12px 5% 8px;
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 180px;
     margin: 0 auto;
 }
 
 .redes {
-    margin-top: 10px;
+    margin-top: 6px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 14px;
 }
 
 .redes img {
-    width: 32px;
-    height: auto;
+    width: 28px;
 }
 
 /* =========================
-   LAYOUT PRINCIPAL
+   LAYOUT
 ========================= */
 .layout {
     display: flex;
     padding: 0 5%;
-    height: calc(
-        100vh - var(--top-bar) - var(--header) - var(--footer)
-    );
 }
 
 /* =========================
-   TITULO (FIJO – 9:16)
+   TITULO VERTICAL (FIJO)
 ========================= */
 .titulo {
-    width: 20%;
+    width: 22%;
+    position: sticky;
+    top: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .titulo img {
-    height: 100%;
-    width: auto;
-    max-height: 100%;
+    height: 85vh;
     aspect-ratio: 9 / 16;
     object-fit: contain;
 }
 
 /* =========================
-   CATALOGO (SCROLL)
+   CATALOGO
 ========================= */
 .catalogo {
-    width: 80%;
-    overflow-y: auto;
-    padding-left: 20px;
+    width: 78%;
+    padding-left: 12px;
 }
 
 /* =========================
-   ITEM CELULAR
+   CARD CELULAR
 ========================= */
 .card {
-    padding: 15px 0;
-    border-bottom: 1px dashed #999;
+    padding: 10px 0;
 }
 
-.card h3 {
-    font-size: 22px;
-}
-
-.card .precio {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-button {
-    margin-top: 8px;
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* =========================
-   FOOTER (FIJO, PEGADO ABAJO)
-========================= */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: var(--footer);
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; /* SIN margen abajo */
-}
-
-.footer img {
-    max-height: 100%;
-    width: auto;
-}
-
-/* =========================
-   MODAL
-========================= */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    max-width: 400px;
-    margin: 15% auto;
-    border-radius: 10px;
-}
-
-#cerrar {
-    float: right;
-    cursor: pointer;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-
-    .layout {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-
-    .titulo {
-        display: none; /* NO titulo vertical en móvil */
-    }
-
-    .catalogo {
-        width: 100%;
-        padding: 0;
-    }
-}
-
-
-/* =========================
-   CARD CELULAR – MOBILE
-========================= */
-
-.card {
-    padding: 12px 0;
-}
-
-/* TITULO + */
+/* -------- TITULO + -------- */
 .fila-titulo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .titulo-celular {
     flex: 1;
-    font-size: 28px;
-    font-weight: bold;
+    font-family: 'MinimoBold';
+    font-size: 22px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: center;
+    text-align: left;
 }
 
 .btn-plus {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
-/* INFO */
+/* -------- INFO -------- */
 .fila-info {
     display: flex;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 /* MEMORIA / RAM */
 .info-left {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .btn-info {
     background: #fe6a00;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
+    color: #fff;
+    border-radius: 16px;
+    padding: 4px 10px;
     white-space: nowrap;
+    font-size: 12px;
+}
+
+.label {
+    font-family: 'MinimoLight';
+    font-size: 11px;
+}
+
+.value {
+    font-family: 'MinimoBold';
     font-size: 14px;
 }
 
@@ -250,14 +170,79 @@ button {
 }
 
 .precio {
-    font-size: 30px;
+    font-family: 'MinimoBold';
+    font-size: 26px;
     white-space: nowrap;
 }
 
-/* SEPARADOR */
+/* -------- SEPARADOR -------- */
 .separador {
-    border-bottom: 1px dashed #999;
-    margin-top: 12px;
+    border-bottom: 1px dashed #bbb;
+    margin-top: 10px;
 }
 
+/* =========================
+   FOOTER (NO FIJO)
+========================= */
+.footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
 
+.footer img {
+    max-width: 100%;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    max-width: 360px;
+    margin: 20% auto;
+    border-radius: 12px;
+}
+
+#cerrar {
+    float: right;
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE FIRST
+========================= */
+@media (max-width: 768px) {
+
+    .layout {
+        flex-direction: column;
+        padding: 0 12px;
+    }
+
+    .titulo {
+        display: none;
+    }
+
+    .catalogo {
+        width: 100%;
+        padding: 0;
+    }
+
+    .titulo-celular {
+        font-size: 20px;
+    }
+
+    .precio {
+        font-size: 24px;
+    }
+}
