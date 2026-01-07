@@ -64,7 +64,7 @@ body {
 }
 
 .redes img {
-    width: 20%; /* más grande para que sea legible */
+    width: 50%; /* más grande para que sea legible */
     height: auto;
 }
 
@@ -273,4 +273,5 @@ body {
         margin-top: 4px;
     }
 }
+
 
