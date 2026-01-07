@@ -110,7 +110,7 @@ body {
    CARD CELULAR
 ========================= */
 .card {
-    padding: 0px 0;
+    padding: 2px 0;
 }
 
 /* -------- TITULO + -------- */
@@ -274,6 +274,7 @@ body {
         margin-top: 4px;
     }
 }
+
 
 
 
