@@ -192,6 +192,8 @@ body {
 ========================= */
 .footer {
     margin-top: 12px;
+    margin-right: 10%; 
+   margin-left: 10%;
     padding: 6px 0;
     display: flex;
     justify-content: center;
@@ -272,3 +274,4 @@ body {
         margin-top: 4px;
     }
 }
+
