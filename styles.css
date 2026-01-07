@@ -60,7 +60,7 @@ body {
     margin-top: 4px;
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 2px;
 }
 
 .redes img {
@@ -84,12 +84,12 @@ body {
 .titulo {
     width: 20%;
     position: sticky;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 20vh;                 /* ⬅ empieza después del 20% superior */
+    height: 60vh;              /* ⬅ ocupa solo el centro de la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none;         /* no interfiere con footer ni header */
+    pointer-events: none;      /* no interfiere con header/footer */         /* no interfiere con footer ni header */
 }
 
 .titulo img {
@@ -274,4 +274,5 @@ body {
         margin-top: 4px;
     }
 }
+
 
