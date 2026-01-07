@@ -23,42 +23,44 @@ fetch(URL)
             card.className = "card";
 
             card.innerHTML = `
-                <!-- TITULO -->
-                <div class="titulo-celular">
-                    ${modelo}
-                </div>
+                <div class="card">
 
-                <!-- INFO -->
-                <div class="info-row">
+                    <!-- FILA TITULO + -->
+                    <div class="fila-titulo">
+                        <div class="titulo-celular">${modelo}</div>
+                        <img 
+                            src="img/plus.png" 
+                            class="btn-plus" 
+                            onclick="verMas('${detalles.replace(/'/g, "\\'")}')"
+                        >
+                    </div>
 
-                    <!-- MEMORIA / RAM -->
-                    <div class="info-left">
-                        <div class="btn-info">
-                            <span class="label">MEMORIA:</span>
-                            <span class="value">${almacenamiento}</span>
+                    <!-- FILA INFO -->
+                    <div class="fila-info">
+
+                        <!-- MEMORIA / RAM -->
+                        <div class="info-left">
+                            <div class="btn-info">
+                                <span class="label">MEMORIA:</span>
+                                <span class="value">${almacenamiento}</span>
+                            </div>
+                            <div class="btn-info">
+                                <span class="label">RAM:</span>
+                                <span class="value">${ram}</span>
+                            </div>
                         </div>
-                        <div class="btn-info">
-                            <span class="label">RAM:</span>
-                            <span class="value">${ram}</span>
+
+                        <!-- PRECIO -->
+                        <div class="info-precio">
+                            <span class="precio">${precio}</span>
                         </div>
+
                     </div>
 
-                    <!-- PRECIO -->
-                    <div class="info-center">
-                        <span class="precio">${precio}</span>
-                    </div>
-
-                    <!-- BOTONES -->
-                    <div class="info-right">
-                        <img src="img/plus.png" class="btn-icon" alt="+">
-                        <img src="img/whatsapp.png" class="btn-icon" alt="WhatsApp">
-                    </div>
-
+                    <div class="separador"></div>
                 </div>
-
-                <!-- LINEA -->
-                <div class="separador"></div>
             `;
+
 
             catalogo.appendChild(card);
         });

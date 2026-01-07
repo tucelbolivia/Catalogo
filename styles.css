@@ -19,7 +19,7 @@
 body {
     font-family: 'Minimo', sans-serif;
     background: #fff;
-    overflow: hidden; /* solo el catálogo hace scroll */
+    overflow-x: hidden; /* solo el catálogo hace scroll */
 }
 
 /* =========================
@@ -174,98 +174,89 @@ button {
 @media (max-width: 768px) {
 
     .layout {
-        flex-direction: row;
-        padding: 0 3%;
+        flex-direction: column;
+        padding: 0 10px;
     }
 
     .titulo {
-        width: 25%;
+        display: none; /* NO titulo vertical en móvil */
     }
 
     .catalogo {
-        width: 75%;
-        padding-left: 10px;
-    }
-
-    .logo {
-        max-width: 160px;
+        width: 100%;
+        padding: 0;
     }
 }
 
 
 /* =========================
-   CARD – NUEVO DISEÑO CELULAR
+   CARD CELULAR – MOBILE
 ========================= */
 
-.titulo-celular {
-    font-family: 'Minimo';
-    font-weight: bold;
-    font-size: 32px;
-    text-align: center;
-    white-space: nowrap; /* NO permite salto de línea */
-    margin-bottom: 10px;
+.card {
+    padding: 12px 0;
 }
 
-/* FILA PRINCIPAL */
-.info-row {
+/* TITULO + */
+.fila-titulo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-/* IZQUIERDA – MEMORIA / RAM */
-.info-left {
-    display: flex;
     gap: 8px;
 }
 
-/* BOTONES VISUALES */
+.titulo-celular {
+    flex: 1;
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.btn-plus {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+/* INFO */
+.fila-info {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+/* MEMORIA / RAM */
+.info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .btn-info {
     background: #fe6a00;
     color: white;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 20px;
-    min-width: 140px;
-    text-align: center;
+    white-space: nowrap;
     font-size: 14px;
 }
 
-.label {
-    font-family: 'Minimo';
-}
-
-.value {
-    font-family: 'Minimo';
-    font-weight: bold;
-}
-
-/* CENTRO – PRECIO */
-.info-center {
+/* PRECIO */
+.info-precio {
     flex: 1;
     text-align: center;
 }
 
-.info-center .precio {
-    font-size: 32px;
-    font-weight: normal;
-}
-
-/* DERECHA – ICONOS */
-.info-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-icon {
-    width: 34px;
-    height: auto;
-    cursor: pointer;
+.precio {
+    font-size: 30px;
+    white-space: nowrap;
 }
 
 /* SEPARADOR */
 .separador {
     border-bottom: 1px dashed #999;
-    margin-top: 15px;
+    margin-top: 12px;
 }
+
