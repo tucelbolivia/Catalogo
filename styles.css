@@ -52,7 +52,7 @@ body {
 }
 
 .logo {
-    max-width: 80px; /* más pequeño para móviles */
+    max-width: 80px;
     margin: 0 auto;
 }
 
@@ -64,41 +64,45 @@ body {
 }
 
 .redes img {
-    width: 50%; /* más grande para que sea legible */
+    width: 50%;
     height: auto;
 }
 
 /* =========================
-   LAYOUT
+   LAYOUT (SIEMPRE EN FILA)
 ========================= */
 .layout {
     display: flex;
+    flex-direction: row;          /* 🔒 NUNCA COLUMNA */
     padding: 0 5%;
     gap: 0;
 }
 
 /* =========================
-   TITULO VERTICAL (FIJO)
+   TITULO VERTICAL (FIJO Y CENTRADO)
 ========================= */
 .titulo {
-    width: 22%;
+    width: 20%;
     position: sticky;
-    top: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     justify-content: center;
+    align-items: center;
+    pointer-events: none;         /* no interfiere con footer ni header */
 }
 
 .titulo img {
     height: 80vh;
-    aspect-ratio: 9 / 16;
+    max-height: 80vh;
     object-fit: contain;
 }
 
 /* =========================
-   CATALOGO
+   CATALOGO (SCROLLEABLE)
 ========================= */
 .catalogo {
-    width: 78%;
+    width: 80%;
     padding-left: 12px;
 }
 
@@ -106,7 +110,7 @@ body {
    CARD CELULAR
 ========================= */
 .card {
-    padding: 6px 0; /* menos espacio entre celulares */
+    padding: 6px 0;
 }
 
 /* -------- TITULO + -------- */
@@ -136,14 +140,14 @@ body {
 .fila-info {
     display: flex;
     align-items: center;
-    margin-top: 0px; /* menos espacio vertical */
+    margin-top: 0px;
 }
 
 /* MEMORIA / RAM */
 .info-left {
     display: flex;
     flex-direction: column;
-    gap: 2px; /* más compactos */
+    gap: 2px;
 }
 
 .btn-info {
@@ -152,7 +156,7 @@ body {
     border-radius: 14px;
     padding: 2px 8px;
     white-space: nowrap;
-    font-size: 10px; /* más pequeño para ocupar menos alto */
+    font-size: 10px;
 }
 
 .label {
@@ -180,11 +184,11 @@ body {
 /* -------- SEPARADOR -------- */
 .separador {
     border-bottom: 1px dashed #bbb;
-    margin-top: 6px; /* menos espacio */
+    margin-top: 6px;
 }
 
 /* =========================
-   FOOTER (NO FIJO)
+   FOOTER
 ========================= */
 .footer {
     margin-top: 12px;
@@ -222,30 +226,25 @@ body {
 }
 
 /* =========================
-   MOBILE FIRST
+   MOBILE FIRST (SIN ROMPER LAYOUT)
 ========================= */
 @media (max-width: 768px) {
 
     .layout {
-        flex-direction: column;
         padding: 0 8px;
     }
 
-    /* Título sigue visible en móviles */
     .titulo {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 6px;
+        width: 20%;
     }
 
     .titulo img {
-        height: 25vh;
+        height: 60vh;
     }
 
     .catalogo {
-        width: 100%;
-        padding: 0;
+        width: 80%;
+        padding-left: 8px;
     }
 
     .titulo-celular {
@@ -273,5 +272,3 @@ body {
         margin-top: 4px;
     }
 }
-
-
