@@ -52,7 +52,7 @@ body {
 }
 
 .logo {
-    max-width: 80px;
+    max-width: 100px;
     margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@ body {
     margin-top: 4px;
     display: flex;
     justify-content: center;
-    gap: 2px;
+    gap: 0px;
 }
 
 .redes img {
@@ -74,7 +74,7 @@ body {
 .layout {
     display: flex;
     flex-direction: row;          /* 🔒 NUNCA COLUMNA */
-    padding: 0 5%;
+    padding: 0 10%;
     gap: 0;
 }
 
@@ -110,7 +110,7 @@ body {
    CARD CELULAR
 ========================= */
 .card {
-    padding: 6px 0;
+    padding: 0px 0;
 }
 
 /* -------- TITULO + -------- */
@@ -274,5 +274,6 @@ body {
         margin-top: 4px;
     }
 }
+
 
 
