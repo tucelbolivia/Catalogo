@@ -48,23 +48,24 @@ body {
 ========================= */
 .header {
     text-align: center;
-    padding: 12px 5% 8px;
+    padding: 10px 5px 6px;
 }
 
 .logo {
-    max-width: 180px;
+    max-width: 140px; /* más pequeño para móviles */
     margin: 0 auto;
 }
 
 .redes {
-    margin-top: 6px;
+    margin-top: 4px;
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 8px;
 }
 
 .redes img {
-    width: 28px;
+    width: 36px; /* más grande para que sea legible */
+    height: auto;
 }
 
 /* =========================
@@ -73,6 +74,7 @@ body {
 .layout {
     display: flex;
     padding: 0 5%;
+    gap: 0;
 }
 
 /* =========================
@@ -87,7 +89,7 @@ body {
 }
 
 .titulo img {
-    height: 85vh;
+    height: 80vh;
     aspect-ratio: 9 / 16;
     object-fit: contain;
 }
@@ -104,7 +106,7 @@ body {
    CARD CELULAR
 ========================= */
 .card {
-    padding: 10px 0;
+    padding: 6px 0; /* menos espacio entre celulares */
 }
 
 /* -------- TITULO + -------- */
@@ -117,7 +119,7 @@ body {
 .titulo-celular {
     flex: 1;
     font-family: 'MinimoBold';
-    font-size: 22px;
+    font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -125,8 +127,8 @@ body {
 }
 
 .btn-plus {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }
 
@@ -134,33 +136,33 @@ body {
 .fila-info {
     display: flex;
     align-items: center;
-    margin-top: 6px;
+    margin-top: 4px; /* menos espacio vertical */
 }
 
 /* MEMORIA / RAM */
 .info-left {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px; /* más compactos */
 }
 
 .btn-info {
     background: #fe6a00;
     color: #fff;
-    border-radius: 16px;
-    padding: 4px 10px;
+    border-radius: 14px;
+    padding: 2px 8px;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 10px; /* más pequeño para ocupar menos alto */
 }
 
 .label {
     font-family: 'MinimoLight';
-    font-size: 11px;
+    font-size: 9px;
 }
 
 .value {
     font-family: 'MinimoBold';
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* PRECIO */
@@ -171,22 +173,22 @@ body {
 
 .precio {
     font-family: 'MinimoBold';
-    font-size: 26px;
+    font-size: 24px;
     white-space: nowrap;
 }
 
 /* -------- SEPARADOR -------- */
 .separador {
     border-bottom: 1px dashed #bbb;
-    margin-top: 10px;
+    margin-top: 6px; /* menos espacio */
 }
 
 /* =========================
    FOOTER (NO FIJO)
 ========================= */
 .footer {
-    margin-top: 20px;
-    padding: 10px 0;
+    margin-top: 12px;
+    padding: 6px 0;
     display: flex;
     justify-content: center;
 }
@@ -208,8 +210,8 @@ body {
 
 .modal-content {
     background: white;
-    padding: 20px;
-    max-width: 360px;
+    padding: 16px;
+    max-width: 340px;
     margin: 20% auto;
     border-radius: 12px;
 }
@@ -226,11 +228,19 @@ body {
 
     .layout {
         flex-direction: column;
-        padding: 0 12px;
+        padding: 0 8px;
     }
 
+    /* Título sigue visible en móviles */
     .titulo {
-        display: none;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 6px;
+    }
+
+    .titulo img {
+        height: 25vh;
     }
 
     .catalogo {
@@ -239,10 +249,27 @@ body {
     }
 
     .titulo-celular {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .precio {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    .btn-info {
+        padding: 2px 6px;
+        font-size: 9px;
+    }
+
+    .value {
+        font-size: 11px;
+    }
+
+    .label {
+        font-size: 8px;
+    }
+
+    .separador {
+        margin-top: 4px;
     }
 }
